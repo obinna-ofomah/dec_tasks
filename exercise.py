@@ -127,5 +127,17 @@ def check_valid_alpha(list_object):
 
     return valid_names
 
-names = ['Obinna', 'Amae4tula', 'Chioma']
+
+#####################################################################################
+# TASK 5
+
+def filter_bad_entries(list_objects):
+    for element in list_objects:
+        if type(element) != str:
+            yield element
+
+    
+
+
+
 
