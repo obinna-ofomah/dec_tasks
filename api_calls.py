@@ -10,14 +10,16 @@ managerial_roles = []
 senior_roles = []
 
 for role in roles_data:
-    # since both jobLevels are Senior level roles, we start the condition from jobLevel == senior 
-    if role['jobLevel'] == 'Senior':
-        
-        # A role is a managerial level role if the word 'Manager' appears in the jobTitle
-        if 'Manager' in role['jobTitle']:
-            managerial_roles.append(role)
-        else:
-            senior_roles.append(role)
+    if 'Manager' in role['jobTitle']:
+        managerial_roles.append(role['jobTitle'])
+
+    if 'Senior' in role['jobTitle'] or 'Sr.' in role['jobTitle']:
+        senior_roles.append(role['jobTitle'])
+
+
+print(managerial_roles)
+print(senior_roles)
+
 
 ###############################################################################
 # Task 2 - Extract all the competitions from the api
